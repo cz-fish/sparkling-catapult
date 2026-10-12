@@ -33,5 +33,19 @@ a post (or focus it and press Enter/Space) to open its full-size image. The
 overlay's Previous and Next controls follow the current search and sort order,
 including across pages. Close it with the Close button, Escape, or by clicking
 the backdrop.
-Publish the contents of `site/` on the repository's `gh-pages` branch. The
-build script does not switch or modify Git branches.
+
+## Publish to GitHub Pages
+
+Build the site, then create a local commit on `gh-pages`:
+
+```powershell
+py scripts\build_site.py
+py scripts\publish_site.py
+```
+
+The publisher replaces the previous contents of `gh-pages` with `site/` and
+commits the result without pushing. It uses a temporary detached Git worktree,
+so your current branch and uncommitted changes remain untouched. The
+branch is created if it does not yet exist. The `.pic-blog-generated` safety
+marker is not included in the published site. Push `gh-pages` separately when
+you are ready to publish.
