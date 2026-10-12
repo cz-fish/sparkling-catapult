@@ -206,7 +206,7 @@ def render_page(
 </head>
 <body>
   <header class="page-header">
-    <h1><a href="{prefix}index.html">Picture blog</a></h1>
+    <h1><a href="{prefix}index.html">Sparkling Catapult</a></h1>
     <p>{html.escape(title)}</p>
     <nav class="story-nav" aria-label="Stories">{nav}</nav>
   </header>
