@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>císařův-pizzař</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/site.js" defer></script>
+</head>
+<body>
+  <header class="page-header">
+    <h1><a href="../../index.html">Sparkling Catapult</a></h1>
+    <p>císařův-pizzař</p>
+    <nav class="story-nav" aria-label="Stories"><a href="../../index.html">All posts</a> <a href="../../stories/aoc21/index.html">aoc21</a> <a href="../../stories/aoc23/index.html">aoc23</a> <a href="../../stories/c-sa-v-pizza/index.html">císařův-pizzař</a> <a href="../../stories/mystery/index.html">mystery</a> <a href="../../stories/rally/index.html">rally</a> <a href="../../stories/spaceboy/index.html">spaceboy</a> <a href="../../stories/unsorted/index.html">unsorted</a></nav>
+  </header>
+  <main>
+    <section class="controls" aria-label="Browse posts">
+      <label>Search titles and text
+        <input type="search" data-search-for="posts">
+      </label>
+      <label>Order
+        <select data-order-for="posts">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Newest last</option>
+        </select>
+      </label>
+    </section>
+    <section id="posts" class="post-list" data-post-list data-page-size="12" aria-live="polite">
+      <article class="post" data-search-text="Co snídá chasa " tabindex="0" aria-haspopup="dialog" aria-label="Open post: Co snídá chasa">
+  <img src="../../pictures/c%C3%ADsa%C5%99%C5%AFv-pizza%C5%99/220123%20-%20Co%20sn%C3%ADd%C3%A1%20chasa.jpg" alt="Co snídá chasa" loading="lazy">
+  <h2>Co snídá chasa</h2>
+  <p class="post-meta"><time datetime="2022-01-23">2022-01-23</time> · <a href="../../stories/c-sa-v-pizza/index.html">císařův-pizzař #1</a></p>
+  
+</article>
+    </section>
+    <p class="empty-state" data-empty-for="posts" hidden>No posts match your search.</p>
+    <nav class="pagination" aria-label="Post pages">
+      <button type="button" data-previous-for="posts">Previous</button>
+      <span data-page-for="posts"></span>
+      <button type="button" data-next-for="posts">Next</button>
+    </nav>
+  </main>
+  <dialog class="post-viewer" aria-labelledby="viewer-title">
+    <div class="viewer-toolbar">
+      <button type="button" data-viewer-previous aria-label="Previous post">Previous</button>
+      <button type="button" data-viewer-close aria-label="Close full-size post">Close</button>
+      <button type="button" data-viewer-next aria-label="Next post">Next</button>
+    </div>
+    <img class="viewer-image" data-viewer-image alt="">
+    <section class="viewer-details">
+      <h2 id="viewer-title" data-viewer-title></h2>
+      <div data-viewer-meta></div>
+      <div data-viewer-text></div>
+    </section>
+  </dialog>
+  <footer class="page-footer">Built from the blog's YAML posts.</footer>
+</body>
+</html>
