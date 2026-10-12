@@ -163,7 +163,7 @@ def render_post(post: Post, picture_url: str, prefix: str) -> str:
             f"{html.escape(post.series)} #{post.ordinal}</a>"
         )
     description = f"<p>{text}</p>" if text else ""
-    return f"""<article class="post" data-search-text="{search_text}">
+    return f"""<article class="post" data-search-text="{search_text}" tabindex="0" aria-haspopup="dialog" aria-label="Open post: {title}">
   <img src="{picture_url}" alt="{title}" loading="lazy">
   <h2>{title}</h2>
   <p class="post-meta"><time datetime="{post.published.isoformat()}">{post.published.isoformat()}</time>{story}</p>
@@ -232,6 +232,19 @@ def render_page(
       <button type="button" data-next-for="posts">Next</button>
     </nav>
   </main>
+  <dialog class="post-viewer" aria-labelledby="viewer-title">
+    <div class="viewer-toolbar">
+      <button type="button" data-viewer-previous aria-label="Previous post">Previous</button>
+      <button type="button" data-viewer-close aria-label="Close full-size post">Close</button>
+      <button type="button" data-viewer-next aria-label="Next post">Next</button>
+    </div>
+    <img class="viewer-image" data-viewer-image alt="">
+    <section class="viewer-details">
+      <h2 id="viewer-title" data-viewer-title></h2>
+      <div data-viewer-meta></div>
+      <div data-viewer-text></div>
+    </section>
+  </dialog>
   <footer class="page-footer">Built from the blog's YAML posts.</footer>
 </body>
 </html>

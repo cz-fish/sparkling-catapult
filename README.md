@@ -28,6 +28,10 @@ The build script generates a static site that can be published with GitHub Pages
 
 The generated site is written to `site/`. It contains the home page, one page
 per story, styles, scripts, and the referenced pictures. Search checks titles
-and captions; order and pagination work in the browser without a server.
+and captions; order and pagination work in the browser without a server. Click
+a post (or focus it and press Enter/Space) to open its full-size image. The
+overlay's Previous and Next controls follow the current search and sort order,
+including across pages. Close it with the Close button, Escape, or by clicking
+the backdrop.
 Publish the contents of `site/` on the repository's `gh-pages` branch. The
 build script does not switch or modify Git branches.

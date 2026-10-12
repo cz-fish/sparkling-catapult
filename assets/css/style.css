@@ -76,6 +76,12 @@ button {
   background: #fff;
   border: 1px solid #e1ddd6;
   border-radius: 0.5rem;
+  cursor: zoom-in;
+}
+
+.post:focus-visible {
+  outline: 3px solid #285b83;
+  outline-offset: 3px;
 }
 
 .post img {
@@ -114,4 +120,62 @@ button {
 .page-footer {
   padding-block: 1rem 2rem;
   border-top: 1px solid #d8d3ca;
+}
+
+.post-viewer {
+  width: min(100vw, 90rem);
+  height: min(100vh, 100dvh);
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  border: 0;
+  color: #fff;
+  background: #151515;
+}
+
+.post-viewer[open] {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+}
+
+.post-viewer::backdrop {
+  background: rgb(0 0 0 / 85%);
+}
+
+.viewer-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+.viewer-toolbar button {
+  padding: 0.5rem 0.9rem;
+}
+
+.viewer-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: contain;
+}
+
+.viewer-details {
+  max-height: 25vh;
+  overflow-y: auto;
+  padding: 0.5rem 1.25rem 1.25rem;
+}
+
+.viewer-details h2 {
+  margin-block: 0.25rem;
+}
+
+.viewer-details .post-meta {
+  color: #d0d0d0;
+}
+
+.viewer-details a {
+  color: #9ed0ff;
 }
