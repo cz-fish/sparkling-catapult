@@ -1,0 +1,33 @@
+# Picture blog
+
+This repository stores post metadata as YAML and source images under `content/`.
+The build script generates a static site that can be published with GitHub Pages.
+
+## Add a post
+
+1. Put the image in `content/pictures/`.
+2. Add a `.yaml` file in `content/posts/`:
+
+   ```yaml
+   title: First light
+   picture: first-light.jpg
+   date: 2026-10-09
+   series: Sketchbook
+   ordinal: 1
+   text: A short caption for this picture.
+   ```
+
+   `series`, `ordinal`, and `text` are optional. If a post has a `series`, it
+   must also have a positive integer `ordinal`. Dates use `YYYY-MM-DD`.
+3. Install the Python dependency and rebuild:
+
+   ```powershell
+   py -m pip install -r requirements.txt
+   py scripts\build_site.py
+   ```
+
+The generated site is written to `site/`. It contains the home page, one page
+per story, styles, scripts, and the referenced pictures. Search checks titles
+and captions; order and pagination work in the browser without a server.
+Publish the contents of `site/` on the repository's `gh-pages` branch. The
+build script does not switch or modify Git branches.
