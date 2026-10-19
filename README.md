@@ -22,6 +22,8 @@ The build script generates a static site that can be published with GitHub Pages
 3. Install the Python dependency and rebuild:
 
    ```powershell
+   # to allow running the venv activation script
+   # set-executionpolicy -executionpolicy Unrestricted -scope CurrentUser
    py -m pip install -r requirements.txt
    py scripts\build_site.py
    ```
